@@ -9,7 +9,7 @@ db_config = {
     
     'host' : 'localhost',
     'user' : 'root',
-    'password' : 'lataharish28',
+    'password' : 'password',
     'database' : 'price_tracker'
 }
 
