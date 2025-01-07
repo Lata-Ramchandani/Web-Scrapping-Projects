@@ -15,7 +15,7 @@ db_config = {
 
 try:
     connection = mysql.connector.connect(**db_config)
-    print("Database Successfully connected...")
+    print("Database Successfully connected...")   #Debugging
 except Error as error:
     print(f'Error in database connection...,{error}')
 
@@ -33,7 +33,7 @@ def create_table():
 
 def fetch_data(url):
     response = re.get(url)
-    print(f"Fetching {url}: Status Code: {response.status_code}")
+    print(f"Fetching {url}: Status Code: {response.status_code}")  #Debugging
     if response.status_code != 200:
         print(f'Failed to fetch data for {url}. Status code: {response.status_code}')
         return None
@@ -96,6 +96,16 @@ if __name__ == "__main__" :
     # while True:
     #     schedule.run_pending()
     #     time.sleep(1)
-    url = "https://www.caratlane.com/jewellery/ivory-heart-diamond-pendant-jp04880-1yp600.html?ef_id=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE:G:s&utm_campaign=Local-Inventory-Ads-Shopping--India&utm_medium=shopping_LIA_cpc&utm_source=Google&gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE"
-    web_scrap(url)
+    # url = "https://www.caratlane.com/jewellery/ivory-heart-diamond-pendant-jp04880-1yp600.html?ef_id=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE:G:s&utm_campaign=Local-Inventory-Ads-Shopping--India&utm_medium=shopping_LIA_cpc&utm_source=Google&gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE"
+    # web_scrap(url)
+
+    urls = [
+        'https://www.caratlane.com/jewellery/ivory-heart-diamond-pendant-jp04880-1yp600.html?ef_id=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE:G:s&utm_campaign=Local-Inventory-Ads-Shopping--India&utm_medium=shopping_LIA_cpc&utm_source=Google&gad_source=1&gclid=CjwKCAiAm-67BhBlEiwAEVftNq0cm7_cdxM_XXmqbQfnS-edAsh37ZMyqxKYFeI4ra3xUOF0DBJgRhoCPYkQAvD_BwE',
+        "https://www.caratlane.com/jewellery/wondrous-leafy-diamond-bracelet-jt01494-1yp900.html"
+
+    ]
+
+    for url in urls:
+        web_scrap(url)
+
     print("Web Scrapping completed....")
